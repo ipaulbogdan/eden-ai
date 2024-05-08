@@ -1,0 +1,26 @@
+spring:
+  application:
+    name: EdenAi demo
+  datasource:
+    url: jdbc:mysql://localhost:3306/edendb
+    username: eden
+    password: verySecret
+  jpa:
+    database-platform: org.hibernate.dialect.MySQLDialect
+
+
+eden-ai:
+  base-url: https://api.edenai.run
+  ocr-path: /v2/ocr/custom_document_parsing_async
+  secret-key: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiZTJlNWJjM2UtNTk3Ny00MDAxLWEzNTMtYjU5YjlmY2NhNjg0IiwidHlwZSI6InNhbmRib3hfYXBpX3Rva2VuIn0.TyDK7TUzAWQvoHH5E1S_0Ky-XOE2ml0PKZJFf5A4Cx8"
+
+
+aws:
+  s3:
+    endpoint: http://localhost:4566
+    region: us-east-1
+    bucket: edendemo
+    access-key: test
+    secret-key: test
+
+

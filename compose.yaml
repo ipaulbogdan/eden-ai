@@ -1,0 +1,22 @@
+services:
+  mysql:
+    image: 'mysql:latest'
+    environment:
+      - 'MYSQL_DATABASE=edendb'
+      - 'MYSQL_PASSWORD=secret'
+      - 'MYSQL_ROOT_PASSWORD=verysecret'
+      - 'MYSQL_USER=eden'
+    ports:
+      - 3306:3306
+    volumes:
+      - ./dev/init.sql:/docker-entrypoint-initdb.d/init.sql
+      - ./dev/mysql-data:/var/lib/mysql
+  localstack:
+    image: localstack/localstack:latest
+    ports:
+      - 4566:4566
+    environment:
+      - PERSISTENCE=1
+    volumes:
+      - ./dev/localstack-setup.sh:/etc/localstack/init/ready.d/script.sh
+      - ./dev/localstack-data:/var/lib/localstack
