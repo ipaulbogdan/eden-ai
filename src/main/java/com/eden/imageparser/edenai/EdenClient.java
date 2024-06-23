@@ -1,21 +1,17 @@
 package com.eden.imageparser.edenai;
 
-import com.eden.imageparser.edenai.dto.EdenOcrLaunchRequest;
 import com.eden.imageparser.edenai.dto.EdenOcrLaunchResponse;
 import com.eden.imageparser.edenai.dto.EdenQuery;
 import lombok.AllArgsConstructor;
 import lombok.SneakyThrows;
-import org.apache.commons.io.FileUtils;
-import org.springframework.core.io.ByteArrayResource;
 import org.springframework.core.io.ResourceLoader;
-import org.springframework.http.*;
+import org.springframework.http.HttpEntity;
+import org.springframework.http.HttpHeaders;
+import org.springframework.http.MediaType;
 import org.springframework.http.client.MultipartBodyBuilder;
 import org.springframework.stereotype.Component;
 import org.springframework.web.client.RestTemplate;
-import org.springframework.web.multipart.MultipartFile;
 
-import java.io.ByteArrayInputStream;
-import java.io.File;
 import java.util.List;
 
 @Component
